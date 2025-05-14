@@ -7,6 +7,7 @@ import tempfile
 from typing import Tuple, Union
 
 import uvicorn
+from fastapi_offline import  FastAPIOffline
 from fastapi import FastAPI, HTTPException, UploadFile
 from fastapi.responses import JSONResponse
 from loguru import logger
@@ -24,7 +25,7 @@ from magic_pdf.operators.pipes import PipeResult
 
 model_config.__use_inside_model__ = True
 
-app = FastAPI()
+app = FastAPIOffline()
 
 pdf_extensions = [".pdf"]
 office_extensions = [".ppt", ".pptx", ".doc", ".docx"]
